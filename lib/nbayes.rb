@@ -116,6 +116,9 @@ module NBayes
 
     # Add this token to this category
     def add_token_to_category(category, token)
+      # if the category does not exist
+      cat_data(category)[:tokens][token] = 0 if cat_data(category)[:tokens][token].nil?
+
       cat_data(category)[:tokens][token] += 1
       cat_data(category)[:total_tokens] += 1
     end
