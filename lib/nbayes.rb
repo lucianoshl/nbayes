@@ -132,7 +132,7 @@ module NBayes
 
     # How many times does this token appear in this category?
     def count_of_token_in_category(category, token)
-      cat_data(category)[:tokens][token]
+      cat_data(category)[:tokens][token] || 0
     end
 
     def delete_token_from_category(category, token)
